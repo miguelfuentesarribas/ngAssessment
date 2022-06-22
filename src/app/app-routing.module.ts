@@ -29,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'display_hide'
+    redirectTo: 'component_comunication'
   },
 ];
 
