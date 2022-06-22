@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DisplayHideComponent } from './exercices/display-hide/display-hide.component';
-import { ComponentComunicationComponent } from './exercices/component-comunication/component-comunication.component';
 import { CRUDComponent } from './exercices/crud/crud.component';
 import { LightSwitchComponent } from './exercices/light-switch/light-switch.component';
 import { ExternallibraryComponent } from './exercices/externallibrary/externallibrary.component';
+import { ParentComponent } from './exercices/component-comunication/components/parent/parent.component';
 
 const routes: Routes = [
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'component_comunication',
-    component: ComponentComunicationComponent
+    component: ParentComponent
   },
   {
     path: 'CRUD',

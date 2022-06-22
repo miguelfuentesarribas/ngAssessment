@@ -1,0 +1,26 @@
+
+<div class="ms-5 mb-3">
+    <h2>Component Comunication</h2>    
+</div>
+
+    <p-fieldset legend="PARENT" 
+                [toggleable]="true" 
+                id="parent" 
+                >
+
+        <div class="container mt-2">
+            <p class="mb-2">mensaje: </p>
+        </div>
+    
+        <div class="container mt-2">
+            <button pButton pRipple type="button" label="Use Service" class="p-button-outlined p-button-warning"></button>
+            <button pButton pRipple type="button" label="Use Input Property" class="p-button-outlined p-button-warning px-0"></button>
+            <button pButton pRipple type="button" label="Use Observable" class="p-button-outlined p-button-warning"></button>
+        </div>
+    
+        <app-child></app-child>
+        
+    </p-fieldset>
+
+
+

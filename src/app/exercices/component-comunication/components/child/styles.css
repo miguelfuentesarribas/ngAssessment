@@ -1,0 +1,29 @@
+
+#child {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.a100{
+    width: 560px;
+}
+
+div{
+    border-radius: 6px;
+}
+
+button {
+    width: 30%;
+    margin: 1.5%;
+}
+
+.red{
+    background-color: red;
+}

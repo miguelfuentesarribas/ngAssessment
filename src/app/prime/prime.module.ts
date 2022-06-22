@@ -4,6 +4,9 @@ import {SidebarModule} from 'primeng/sidebar';
 import {MenuModule} from 'primeng/menu';
 import {DividerModule} from 'primeng/divider';
 import {ListboxModule} from 'primeng/listbox';
+import {FieldsetModule} from 'primeng/fieldset';
+
+
 
 @NgModule({
   exports: [
@@ -11,7 +14,8 @@ import {ListboxModule} from 'primeng/listbox';
     SidebarModule,
     MenuModule,
     DividerModule,
-    ListboxModule
+    ListboxModule,
+    FieldsetModule   
   ]
 })
 export class PrimeModule { }

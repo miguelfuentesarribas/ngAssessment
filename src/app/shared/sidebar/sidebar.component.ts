@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = [{
-      label: 'Ejercicio',
+      label: 'EJERCICIOS',
       items:[
         {label: "Display Hide", disabled: false, routerLink: ['/display_hide']},
         {label: "Component Comunication", disabled: false, routerLink: ['/component_comunication']},
