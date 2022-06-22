@@ -1,12 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DisplayHideComponent } from './exercices/display-hide/display-hide.component';
+import { ComponentComunicationComponent } from './exercices/component-comunication/component-comunication.component';
+import { CRUDComponent } from './exercices/crud/crud.component';
+import { LightSwitchComponent } from './exercices/light-switch/light-switch.component';
+import { ExternallibraryComponent } from './exercices/externallibrary/externallibrary.component';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./shared/shared.module')
-      .then(m => m.SharedModule)
-  }
+    path: 'display_hide',
+    component: DisplayHideComponent
+  },
+  {
+    path: 'component_comunication',
+    component: ComponentComunicationComponent
+  },
+  {
+    path: 'CRUD',
+    component: CRUDComponent
+  },
+  {
+    path: 'light_switch',
+    component: LightSwitchComponent
+  },
+  {
+    path: 'external_library',
+    component: ExternallibraryComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'display_hide'
+  },
 ];
 
 @NgModule({

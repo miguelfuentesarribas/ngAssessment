@@ -1,10 +1,10 @@
 
 
 <div class="header">
-    <div class="menu" (click)="openClose()" >
+    <div class="menu hoverable" (click)="openClose()" >
         <i class="pi pi-list" ></i>   
     </div>
-    <div class="repo">
+    <div class="repo hoverable">
 
         <h1 class="h1">
             <a href="https://github.com/miguelfuentesarribas" target="_blank">
@@ -19,5 +19,11 @@
 <p-sidebar [(visible)]="display" 
         [transitionOptions]="'300ms'" 
         [style]="{width:'15em'}">
-    <h1>Content</h1>
+    <div class="menuContainer">
+
+        <h3>Ejercicios</h3>
+        <p-menu [model]="items"></p-menu>
+        <!-- <p-listbox [model]="items" routerLinkActiveOptions optionDisabled="disable"  routerLink="url" optionLabel="title" [style]="{'width':'13rem'}"></p-listbox> -->
+
+    </div>
 </p-sidebar>
