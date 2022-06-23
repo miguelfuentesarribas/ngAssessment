@@ -10,6 +10,8 @@ import { DisplayHideModule } from './exercices/display-hide/display-hide.module'
 import { LightSwitchComponent } from './exercices/light-switch/light-switch.component';
 import { ExternallibraryComponent } from './exercices/externallibrary/externallibrary.component';
 import { ComponentComunicationModule } from './exercices/component-comunication/component-comunication.module';
+import { ParentChildService } from './exercices/component-comunication/services/parent-child.service';
+import { CRUDModule } from './exercices/crud/crud.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { ComponentComunicationModule } from './exercices/component-comunication/
   ],
   imports: [
     ComponentComunicationModule,
+    CRUDModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -26,7 +29,7 @@ import { ComponentComunicationModule } from './exercices/component-comunication/
     SharedModule,
     DisplayHideModule
   ],
-  providers: [],
+  providers: [ParentChildService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
