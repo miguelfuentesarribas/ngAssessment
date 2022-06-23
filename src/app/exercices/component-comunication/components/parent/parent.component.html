@@ -5,8 +5,7 @@
 
     <p-fieldset legend="PARENT" 
                 [toggleable]="true" 
-                id="parent" 
-                >
+                id="parent">
 
         <div class="container mt-2">
             <p class="mb-2">mensaje: {{mensajeFinalPadre}}</p>
@@ -17,7 +16,8 @@
                 pRipple 
                 type="button" 
                 label="Use Service" 
-                class="p-button-outlined p-button-warning">
+                class="p-button-outlined p-button-warning"
+                (click)="usePureService()">
             </button>
             <button pButton 
                 pRipple 
@@ -30,11 +30,12 @@
                 pRipple 
                 type="button" 
                 label="Use Observable" 
-                class="p-button-outlined p-button-warning">
+                class="p-button-outlined p-button-warning"
+                (click)="useObservable()">
             </button>
         </div>
     
-        <app-child [MessageForChild]="this.mensajeParaHijo" 
+        <app-child [messageForChild]="mensajeParaHijo" 
                     (mesajeForParent)="SendToParent($event)">
                     <!-- el primero es el de input y el segundo es el de output -->
         </app-child>

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { ParentChildService } from '../../services/parent-child.service';
 
 @Component({
   selector: 'app-child',
@@ -16,20 +17,34 @@ export class ChildComponent implements OnInit {
 
 
   //input
-  @Input() MessageForChild: string = '';
+  @Input() messageForChild: string = '';
 
 
   //output
   @Output() mesajeForParent = new EventEmitter<string>();
-  
+
   outputEvent() {
     this.mesajeForParent.emit(this.childMessageInput);
   }
 
-  constructor() { }
 
-  ngOnInit(): void {
+  //service
+  constructor(private pcs: ParentChildService) {
+    this.pcs.claseHijo = this;
   }
 
+  
+  useObservable() {
+    this.pcs.menssageForParent.next(this.childMessageObserbable);  
+  }
+
+  ngOnInit(): void {
+    this.pcs.menssageForChild.subscribe(resp => this.messageForChild = resp);
+  }
+
+ // servicio puro
+  usePureService () {
+    this.pcs.clasePadre.mensajeFinalPadre = this.childMessageService;
+  }
 
 }
