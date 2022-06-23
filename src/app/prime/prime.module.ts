@@ -5,6 +5,8 @@ import {MenuModule} from 'primeng/menu';
 import {DividerModule} from 'primeng/divider';
 import {ListboxModule} from 'primeng/listbox';
 import {FieldsetModule} from 'primeng/fieldset';
+import {PasswordModule} from 'primeng/password';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -15,7 +17,9 @@ import {FieldsetModule} from 'primeng/fieldset';
     MenuModule,
     DividerModule,
     ListboxModule,
-    FieldsetModule   
+    FieldsetModule,
+    PasswordModule,
+    InputTextModule,
   ]
 })
 export class PrimeModule { }

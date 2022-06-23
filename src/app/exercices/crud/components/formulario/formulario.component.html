@@ -1,1 +1,84 @@
-<p>formulario works!</p>
+<div class="row">
+    <div class="col">
+
+        
+        <form>
+            
+            <!-- nombre -->
+            <div class="row mb-2">
+                <label class="mb-1">Nombre</label>
+                <div>
+                    <input type="text" 
+                            pInputText
+                            class="form-control"
+                            placeholder="Username">
+                </div>
+            </div>
+            
+            <!-- contraseña -->
+            <div class="row mb-2">
+                <label class="mb-1">Password</label>
+                <div>
+                    <!-- [(ngModel)]="value3" -->
+                    <input type="password" 
+                            pInputText
+                            class="form-control "
+                            placeholder="Pass">
+                </div>
+            </div>
+
+            <!-- contraseña2 -->
+            <div class="row mb-2">
+                <label class="mb-1">Confirm password</label>
+                <div>
+                    <input type="password" 
+                            pInputText
+                            class="form-control "
+                            placeholder="Pass">
+                </div>
+            </div>
+
+            <!-- correo -->
+            <div class="row mb-2">
+                <label class="mb-1">Email</label>
+                <div>
+                    <input type="email" 
+                            pInputText
+                            class="form-control "
+                            placeholder="Example@...">
+                </div>
+            </div>
+            
+            <!-- check ofertas -->
+            
+            <!-- list paises -->
+            <div class="row mb-2">
+                <label class="mb-1">pais</label>
+                <div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected></option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                </div>
+            </div>
+
+
+            <!-- ciudades -->
+            <div class="row mb-2">
+                <label class="mb-1">Ciudad</label>
+                <div>
+                    <input type="text" 
+                            pInputText
+                            class="form-control "
+                            placeholder="Origen">
+                </div>
+            </div>
+
+            <!-- boton -->
+            <button pButton pRipple type="button" label="Enviar" class="p-button-outlined p-button-warning mt-2"></button>
+            <button pButton pRipple type="button" label="Actualizar" class="p-button-outlined p-button-warning mt-2"></button>
+        </form>
+    </div>
+</div>

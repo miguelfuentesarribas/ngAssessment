@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { City } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-formulario',
@@ -7,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class FormularioComponent implements OnInit {
+  cities: City[];
 
-  constructor() { }
+  selectedCity!: City;
+
+  constructor() {
+      this.cities = [
+          {name: 'New York'},
+          {name: 'Rome'},
+          {name: 'London'},
+          {name: 'Istanbul'},
+          {name: 'Paris'},
+      ];
+  }
 
   ngOnInit(): void {
   }

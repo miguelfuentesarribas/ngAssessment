@@ -4,3 +4,7 @@ export interface Exercise {
     disable: boolean,
     routerLink?: any,
 }
+
+export interface City {
+    name: string
+}
