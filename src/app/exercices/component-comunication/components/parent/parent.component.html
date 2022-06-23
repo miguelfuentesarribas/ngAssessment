@@ -1,0 +1,46 @@
+
+<div class="ms-5 mb-3">
+    <h2>Component Comunication</h2>    
+</div>
+
+    <p-fieldset legend="PARENT" 
+                [toggleable]="true" 
+                id="parent">
+
+        <div class="container mt-2">
+            <p class="mb-2">mensaje: {{mensajeFinalPadre}}</p>
+        </div>
+    
+        <div class="container mt-2">
+            <button pButton
+                pRipple 
+                type="button" 
+                label="Use Service" 
+                class="p-button-outlined p-button-warning"
+                (click)="usePureService()">
+            </button>
+            <button pButton 
+                pRipple 
+                type="button" 
+                label="Use Input Property" 
+                class="p-button-outlined p-button-warning px-0"
+                (click)="inputProperty()">
+            </button>
+            <button pButton 
+                pRipple 
+                type="button" 
+                label="Use Observable" 
+                class="p-button-outlined p-button-warning"
+                (click)="useObservable()">
+            </button>
+        </div>
+    
+        <app-child [messageForChild]="mensajeParaHijo" 
+                    (mesajeForParent)="SendToParent($event)">
+                    <!-- el primero es el de input y el segundo es el de output -->
+        </app-child>
+        
+    </p-fieldset>
+
+
+
