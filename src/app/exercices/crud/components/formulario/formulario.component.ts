@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { City } from 'src/app/interfaces/interfaces';
 
 @Component({
@@ -10,7 +10,7 @@ import { City } from 'src/app/interfaces/interfaces';
 })
 export class FormularioComponent implements OnInit {
 
-  formularioCRUD: FormGroup = this.fb.group({
+  formularioCRUD: UntypedFormGroup = this.fb.group({
     nombre: ['miguel', [Validators.required]],
     password: ['12345678', [Validators.required]],
     password2: ['12345678', [Validators.required]],
@@ -26,7 +26,7 @@ export class FormularioComponent implements OnInit {
 
   checked: boolean = false;
 
-  constructor( private fb: FormBuilder) {
+  constructor( private fb: UntypedFormBuilder) {
       
     this.cities = [
       {name: 'New York'},
