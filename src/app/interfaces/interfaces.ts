@@ -8,3 +8,12 @@ export interface Exercise {
 export interface City {
     name: string
 }
+
+export interface Usuario {
+    nombre: string,
+    password: string,
+    email: string,
+    check: boolean,
+    pais?: string,
+    ciudad: string,
+}

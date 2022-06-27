@@ -1,8 +1,9 @@
 <div class="row">
     <div class="col">
 
+        <h3>Formulario de registro</h3>
         
-        <form>
+        <form autocomplete="off" [formGroup]="formularioCRUD" (ngSubmit)="enviarForm()">
             
             <!-- nombre -->
             <div class="row mb-2">
@@ -11,7 +12,8 @@
                     <input type="text" 
                             pInputText
                             class="form-control"
-                            placeholder="Username">
+                            placeholder="Username"
+                            formControlName="nombre">
                 </div>
             </div>
             
@@ -23,7 +25,8 @@
                     <input type="password" 
                             pInputText
                             class="form-control "
-                            placeholder="Pass">
+                            placeholder="Pass"
+                            formControlName="password">
                 </div>
             </div>
 
@@ -34,7 +37,8 @@
                     <input type="password" 
                             pInputText
                             class="form-control "
-                            placeholder="Pass">
+                            placeholder="Pass"
+                            formControlName="password2">
                 </div>
             </div>
 
@@ -45,14 +49,22 @@
                     <input type="email" 
                             pInputText
                             class="form-control "
-                            placeholder="Example@...">
+                            placeholder="Example@..."
+                            formControlName="email">
+
                 </div>
             </div>
             
             <!-- check ofertas -->
-            
+            <p-checkbox [binary]="true" 
+                        inputId="binary" 
+                        class="mb-3"
+                        formControlName="check"></p-checkbox>
+            <label for="binary" class="mb-3">Enviame ofertas promocionales</label> 
+
+
             <!-- list paises -->
-            <div class="row mb-2">
+            <!-- <div class="row mb-2">
                 <label class="mb-1">pais</label>
                 <div>
                     <select class="custom-select" id="inputGroupSelect01">
@@ -62,7 +74,7 @@
                         <option value="3">Three</option>
                       </select>
                 </div>
-            </div>
+            </div> -->
 
 
             <!-- ciudades -->
@@ -72,13 +84,28 @@
                     <input type="text" 
                             pInputText
                             class="form-control "
-                            placeholder="Origen">
+                            placeholder="Origen"
+                            formControlName="ciudad">
                 </div>
             </div>
 
             <!-- boton -->
-            <button pButton pRipple type="button" label="Enviar" class="p-button-outlined p-button-warning mt-2"></button>
-            <button pButton pRipple type="button" label="Actualizar" class="p-button-outlined p-button-warning mt-2"></button>
+            <button pButton 
+                    pRipple 
+                    type="submit" 
+                    label="Enviar" 
+                    class="p-button-outlined p-button-warning mt-2"></button>
+            <button 
+                    pButton pRipple 
+                    type="submit" 
+                    label="Actualizar" 
+                    class="p-button-outlined p-button-warning mt-2"></button>
         </form>
     </div>
 </div>
+
+<h2 class="mt-5">Form Valid: {{formularioCRUD.valid}}</h2>
+
+<h2>Form Value: {{formularioCRUD.value | json}}</h2>
+
+<pre>Errores :{{formularioCRUD.controls['nombre'].errors | json}}</pre>

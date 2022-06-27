@@ -12,6 +12,7 @@ import { ExternallibraryComponent } from './exercices/externallibrary/externalli
 import { ComponentComunicationModule } from './exercices/component-comunication/component-comunication.module';
 import { ParentChildService } from './exercices/component-comunication/services/parent-child.service';
 import { CRUDModule } from './exercices/crud/crud.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,9 +26,9 @@ import { CRUDModule } from './exercices/crud/crud.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    PrimeModule,
+   
     SharedModule,
-    DisplayHideModule
+    DisplayHideModule,
   ],
   providers: [ParentChildService],
   bootstrap: [AppComponent]

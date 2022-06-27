@@ -4,6 +4,7 @@ import { CRUDComponent } from '../crud/crud.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { TablaComponent } from './components/tabla/tabla.component';
 import { PrimeModule } from '../../prime/prime.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { PrimeModule } from '../../prime/prime.module';
   ],
   imports: [
     CommonModule,
-    PrimeModule
+    PrimeModule,
+    ReactiveFormsModule,
   ]
 })
 export class CRUDModule { }

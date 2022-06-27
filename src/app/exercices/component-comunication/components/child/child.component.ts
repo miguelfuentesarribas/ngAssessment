@@ -17,7 +17,7 @@ export class ChildComponent implements OnInit {
 
 
   //input
-  @Input() messageForChild: string = '';
+  @Input() messageForChild!: string;
 
 
   //output
@@ -30,7 +30,7 @@ export class ChildComponent implements OnInit {
 
   //service
   constructor(private pcs: ParentChildService) {
-    this.pcs.claseHijo = this;
+    this.pcs.classChild = this;
   }
 
   
@@ -44,7 +44,7 @@ export class ChildComponent implements OnInit {
 
  // servicio puro
   usePureService () {
-    this.pcs.clasePadre.mensajeFinalPadre = this.childMessageService;
+    this.pcs.classParent.mensajeFinalPadre = this.childMessageService;
   }
 
 }

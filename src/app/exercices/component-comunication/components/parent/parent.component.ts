@@ -10,8 +10,8 @@ import { ParentChildService } from '../../services/parent-child.service';
 })
 export class ParentComponent implements OnInit {
 
-  mensajeFinalPadre: string = '';
-  mensajeParaHijo: string = '';
+  mensajeFinalPadre!: string;
+  mensajeParaHijo!: string;
   
   parentMessageService = "Parent using service";
   parentMessageInput = "Parent using input property";
@@ -20,6 +20,8 @@ export class ParentComponent implements OnInit {
   //input 
   inputProperty() {    
     this.mensajeParaHijo = this.parentMessageInput;
+    console.log(this.mensajeParaHijo);
+    
   }
 
   //output
@@ -29,7 +31,7 @@ export class ParentComponent implements OnInit {
   
   // service
   constructor(private pcs: ParentChildService) {
-    this.pcs.clasePadre = this;
+    this.pcs.classParent = this;
   }
   
   useObservable() {
@@ -43,7 +45,7 @@ export class ParentComponent implements OnInit {
   
   // servicio puro
   usePureService() {
-    this.pcs.claseHijo.messageForChild = this.parentMessageService
+    this.pcs.classChild.messageForChild = this.parentMessageService
   }
 
 }
