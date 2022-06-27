@@ -1,24 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../../../interfaces/interfaces';
 import { JsonServerService } from '../../services/json-server.service';
+import { BrothersService } from '../../services/brothers.service';
 
 @Component({
   selector: 'app-tabla',
   templateUrl: './tabla.component.html',
-  styles: [
-  ]
+  styles: [`
+  .update:hover{
+    background-color: var(--blue-600);
+    border-radius: 50%;
+  }
+  .delete:hover{
+    background-color: var(--red-600);
+    border-radius: 50%;
+  }
+  `]
 })
 export class TablaComponent implements OnInit {
 
   usuarios!: Usuario[];
+  
+  update: boolean = false;
 
 
-  constructor(private jss: JsonServerService ) { }
+  constructor(private jss: JsonServerService,
+              private bs: BrothersService) { 
+                this.bs.classTabla = this;
+              }
 
   ngOnInit(): void {
     this.jss.getUsersList().subscribe(usuarios => this.usuarios = usuarios);
-    console.log(this.usuarios);
-    
+  }
+
+
+  delete() {
+
+  }
+
+  uptate() {
+    this.bs.classFormulario.update = !this.bs.classFormulario.update    
   }
 
 }

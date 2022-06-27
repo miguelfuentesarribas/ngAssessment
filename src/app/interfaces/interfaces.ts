@@ -5,7 +5,7 @@ export interface Exercise {
     routerLink?: any,
 }
 
-export interface City {
+export interface Country {
     name: string
 }
 

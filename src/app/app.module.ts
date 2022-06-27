@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PrimeModule } from './prime/prime.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { DisplayHideModule } from './exercices/display-hide/display-hide.module';
@@ -12,7 +11,7 @@ import { ExternallibraryComponent } from './exercices/externallibrary/externalli
 import { ComponentComunicationModule } from './exercices/component-comunication/component-comunication.module';
 import { ParentChildService } from './exercices/component-comunication/services/parent-child.service';
 import { CRUDModule } from './exercices/crud/crud.module';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,9 +25,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-   
     SharedModule,
     DisplayHideModule,
+    HttpClientModule
   ],
   providers: [ParentChildService],
   bootstrap: [AppComponent]

@@ -13,5 +13,9 @@ export class JsonServerService {
   getUsersList(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>('http://localhost:3000/usuarios')
   }
+
+  postUser(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>('http://localhost:3000/usuarios', usuario);
+  }
 }
 

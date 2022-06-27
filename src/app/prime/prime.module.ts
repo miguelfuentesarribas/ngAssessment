@@ -10,6 +10,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import {TableModule} from 'primeng/table';
+import {DropdownModule} from 'primeng/dropdown';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {TableModule} from 'primeng/table';
     InputTextModule,
     CheckboxModule,
     FormsModule,
-    TableModule
+    TableModule,
+    DropdownModule
   ]
 })
 export class PrimeModule { }

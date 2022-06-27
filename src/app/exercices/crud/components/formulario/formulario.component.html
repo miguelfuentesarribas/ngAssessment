@@ -59,26 +59,20 @@
             <p-checkbox [binary]="true" 
                         inputId="binary" 
                         class="mb-3"
-                        formControlName="check"></p-checkbox>
-            <label for="binary" class="mb-3">Enviame ofertas promocionales</label> 
+                        formControlName="check">
+            </p-checkbox>
+            <label for="binary" class="mb-3 ms-3">Enviame ofertas promocionales</label> 
 
 
             <!-- list paises -->
-            <!-- <div class="row mb-2">
-                <label class="mb-1">pais</label>
-                <div>
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected></option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                </div>
-            </div> -->
-
-
+            <p-dropdown [options]="country" 
+                        formControlName="pais"
+                        optionLabel="name"
+                        placeholder="País">
+            </p-dropdown>
+            
             <!-- ciudades -->
-            <div class="row mb-2">
+            <div class="row mb-2 mt-2">
                 <label class="mb-1">Ciudad</label>
                 <div>
                     <input type="text" 
@@ -93,12 +87,14 @@
             <button pButton 
                     pRipple 
                     type="submit" 
-                    label="Enviar" 
+                    label="Enviar"
+                    *ngIf="!update" 
                     class="p-button-outlined p-button-warning mt-2"></button>
             <button 
                     pButton pRipple 
                     type="submit" 
                     label="Actualizar" 
+                    *ngIf="update"
                     class="p-button-outlined p-button-warning mt-2"></button>
         </form>
     </div>
