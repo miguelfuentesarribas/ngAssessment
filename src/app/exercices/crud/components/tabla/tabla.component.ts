@@ -30,7 +30,7 @@ export class TablaComponent implements OnInit {
               private bs: BrothersService) { 
                 this.bs.classTabla = this;
 
-                this.subscription = this.jss.getClickEvent().subscribe(() => this.ngOnInit())
+                this.subscription = this.jss.getClickEventDelete().subscribe(() => this.ngOnInit())
               }
 
   ngOnInit(): void {
@@ -43,8 +43,15 @@ export class TablaComponent implements OnInit {
     this.jss.DelUser(usuario.id!).subscribe(() => this.ngOnInit());
   }
 
-  uptate() {
-    this.bs.classFormulario.update = !this.bs.classFormulario.update    
+  uptate(usuario: Usuario) {
+    
+    this.bs.setUserToUpdate(usuario)
+    console.log(usuario);
+    
+    
+    if (this.bs.classFormulario.update === false) {
+      this.bs.classFormulario.update = !this.bs.classFormulario.update
+    }
   }
 
 }
