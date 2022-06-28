@@ -11,6 +11,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import {TableModule} from 'primeng/table';
 import {DropdownModule} from 'primeng/dropdown';
+import { CardModule} from 'primeng/card';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {DropdownModule} from 'primeng/dropdown';
     CheckboxModule,
     FormsModule,
     TableModule,
-    DropdownModule
+    DropdownModule,
+    CardModule
   ]
 })
 export class PrimeModule { }
