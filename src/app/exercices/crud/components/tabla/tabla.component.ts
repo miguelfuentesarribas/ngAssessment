@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../../../interfaces/interfaces';
 import { JsonServerService } from '../../services/json-server.service';
 import { BrothersService } from '../../services/brothers.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tabla',
@@ -23,19 +24,23 @@ export class TablaComponent implements OnInit {
   
   update: boolean = false;
 
+  subscription: Subscription;
 
   constructor(private jss: JsonServerService,
               private bs: BrothersService) { 
                 this.bs.classTabla = this;
+
+                this.subscription = this.jss.getClickEvent().subscribe(() => this.ngOnInit())
               }
 
   ngOnInit(): void {
-    this.jss.getUsersList().subscribe(usuarios => this.usuarios = usuarios);
+    this.jss.getUsersList().subscribe(usuarios => {this.usuarios = usuarios});
+    
   }
 
 
-  delete() {
-
+  delete(usuario: Usuario) {
+    this.jss.DelUser(usuario.id!).subscribe(() => this.ngOnInit());
   }
 
   uptate() {

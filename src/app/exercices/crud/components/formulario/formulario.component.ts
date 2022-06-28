@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder,  FormGroup,  Validators } from '@angular/forms';
 import { Country } from 'src/app/interfaces/interfaces';
 import { BrothersService } from '../../services/brothers.service';
 import { Usuario } from '../../../../interfaces/interfaces';
@@ -13,7 +13,7 @@ import { JsonServerService } from '../../services/json-server.service';
 })
 export class FormularioComponent implements OnInit {
 
-  formularioCRUD: UntypedFormGroup = this.fb.group({
+  formularioCRUD: FormGroup = this.fb.group({
     nombre: ['miguel', [Validators.required]],
     password: ['12345678', [Validators.required]],
     password2: ['12345678', [Validators.required]],
@@ -53,15 +53,13 @@ export class FormularioComponent implements OnInit {
   }
 
   enviarForm() {
-    console.log(this.formularioCRUD.controls);
+    //console.log(this.formularioCRUD.controls);
     let nombre = this.formularioCRUD.controls['nombre'].value;
     let password = this.formularioCRUD.controls['password'].value;
     let email = this.formularioCRUD.controls['email'].value;
     let check = this.formularioCRUD.controls['check'].value;
-    let pais = this.formularioCRUD.controls['pais'].value;
+    let pais = this.formularioCRUD.controls['pais'].value.name;
     let ciudad = this.formularioCRUD.controls['ciudad'].value;
-
-    
 
     this.usuario = {
       nombre,
@@ -72,11 +70,20 @@ export class FormularioComponent implements OnInit {
       ciudad
     } 
 
-    this.jss.postUser(this.usuario);
-
+    this.jss.postUser(this.usuario).subscribe(response => {
+                                             console.log(response)
+                                             this.jss.sendClick()
+                                            });
+    
     this.formularioCRUD.markAllAsTouched();
-    
-    
+    return;
   }
 
+  passwordMatch(pass1: string, pass2: string) {
+    return !(this.formularioCRUD.get(pass1)?.value === this.formularioCRUD.get(pass2)?.value)
+  }
+
+  enableButton() {
+    return !this.formularioCRUD.valid;
+  }
 }

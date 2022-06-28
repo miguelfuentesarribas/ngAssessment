@@ -6,7 +6,6 @@
 .menu {
     margin: 0px;
     height: 80px;
-    
     width: 80px;
     background-color: var(--surface-b);
     display: flex;
@@ -17,6 +16,7 @@
 
 .repo{
     background-color: var(--surface-b);
+    align-items: center;
 }
 
 .hoverable:hover {
@@ -24,7 +24,6 @@
 }
 
 .menuContainer{
-    background-color: var(--surface-b);
     align-items: center;
     justify-content: center;
     justify-items: center;
@@ -34,7 +33,7 @@
 }
 
 h1 {
-    margin: 20px;
+    margin: 16px;
     white-space: nowrap;
 }
 

@@ -40,6 +40,10 @@
                             placeholder="Pass"
                             formControlName="password2">
                 </div>
+                <span class="form-text text-danger"
+                        *ngIf="passwordMatch('password', 'password2')">
+                    las contraseñas no coinciden
+                </span>
             </div>
 
             <!-- correo -->
@@ -89,13 +93,17 @@
                     type="submit" 
                     label="Enviar"
                     *ngIf="!update" 
-                    class="p-button-outlined p-button-warning mt-2"></button>
+                    class="p-button-outlined p-button-warning mt-2"
+                    [disabled]="enableButton()">
+            </button>
             <button 
                     pButton pRipple 
                     type="submit" 
                     label="Actualizar" 
                     *ngIf="update"
-                    class="p-button-outlined p-button-warning mt-2"></button>
+                    class="p-button-outlined p-button-warning mt-2"
+                    [disabled]="enableButton()">
+            </button>
         </form>
     </div>
 </div>

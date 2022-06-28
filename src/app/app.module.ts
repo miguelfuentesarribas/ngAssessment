@@ -7,17 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { DisplayHideModule } from './exercices/display-hide/display-hide.module';
 import { LightSwitchComponent } from './exercices/light-switch/light-switch.component';
-import { ExternallibraryComponent } from './exercices/externallibrary/externallibrary.component';
 import { ComponentComunicationModule } from './exercices/component-comunication/component-comunication.module';
 import { ParentChildService } from './exercices/component-comunication/services/parent-child.service';
 import { CRUDModule } from './exercices/crud/crud.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ExternalLIbraryComponent } from './exercices/external-library/external-library.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LightSwitchComponent,
-    ExternallibraryComponent,
+    ExternalLIbraryComponent,
   ],
   imports: [
     ComponentComunicationModule,
