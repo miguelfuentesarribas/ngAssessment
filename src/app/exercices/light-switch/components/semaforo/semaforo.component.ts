@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HandlerService } from '../../services/handler.service';
 
 @Component({
   selector: 'app-semaforo',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SemaforoComponent implements OnInit {
 
-  constructor() { }
+  onOff: boolean = false;
+  color:string = 'red';
+
+  constructor(private hs: HandlerService) {
+    this.hs.classSemaforo = this;
+   }
 
   ngOnInit(): void {
   }
 
 }
+
+//
+//
+// añadir ngclass semaforo component
+//
+//

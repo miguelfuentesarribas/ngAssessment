@@ -34,6 +34,7 @@ export class TablaComponent implements OnInit {
               }
 
   ngOnInit(): void {
+    
     this.jss.getUsersList().subscribe(usuarios => {this.usuarios = usuarios});
     
   }

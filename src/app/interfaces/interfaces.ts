@@ -18,3 +18,7 @@ export interface Usuario {
     pais?: string,
     ciudad: string,
 }
+
+export interface Light {
+    color: string
+  }
