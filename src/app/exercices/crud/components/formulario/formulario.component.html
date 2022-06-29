@@ -1,1 +1,120 @@
-<p>formulario works!</p>
+<div class="row">
+    <div class="col">
+
+        <h3>Formulario de registro</h3>
+        
+        <form autocomplete="off" [formGroup]="formularioCRUD" (ngSubmit)="enviarForm()">
+            
+            <!-- nombre -->
+            <div class="row mb-2">
+                <label class="mb-1">Nombre</label>
+                <div>
+                    <input type="text" 
+                            pInputText
+                            class="form-control"
+                            placeholder="Username"
+                            formControlName="nombre">
+                </div>
+            </div>
+            
+            <!-- contraseña -->
+            <div class="row mb-2">
+                <label class="mb-1">Password</label>
+                <div>
+                    <!-- [(ngModel)]="value3" -->
+                    <input type="password" 
+                            pInputText
+                            class="form-control "
+                            placeholder="Pass"
+                            formControlName="password">
+                </div>
+            </div>
+
+            <!-- contraseña2 -->
+            <div class="row mb-2">
+                <label class="mb-1">Confirm password</label>
+                <div>
+                    <input type="password" 
+                            pInputText
+                            class="form-control "
+                            placeholder="Pass"
+                            formControlName="password2">
+                </div>
+                <span class="form-text text-danger"
+                        *ngIf="passwordMatch('password', 'password2')">
+                    las contraseñas no coinciden
+                </span>
+            </div>
+
+            <!-- correo -->
+            <div class="row mb-3">
+                <label class="mb-1">Email</label>
+                <div>
+                    <input type="email" 
+                            pInputText
+                            class="form-control "
+                            placeholder="Example@..."
+                            formControlName="email">
+
+                </div>
+            </div>
+            
+            <!-- check ofertas -->
+            <p-checkbox [binary]="true" 
+                        inputId="binary" 
+                        class="mb-3"
+                        formControlName="check">
+            </p-checkbox>
+            <label for="binary" class="mb-3 ms-3">Enviame ofertas promocionales</label> 
+
+
+            <!-- list paises -->
+            <p-dropdown [options]="country" 
+                        formControlName="pais"
+                        optionLabel="name"
+                        placeholder="País">
+            </p-dropdown>
+            <span class="form-text text-light ms-2"
+                  *ngIf="!formularioCRUD.valid">
+                pais Obligatorio*
+            </span>
+            
+            <!-- ciudades -->
+            <div class="row mb-2 mt-2">
+                <label class="mb-1">Ciudad</label>
+                <div>
+                    <input type="text" 
+                            pInputText
+                            class="form-control "
+                            placeholder="Origen"
+                            formControlName="ciudad">
+                </div>
+            </div>
+
+            <!-- boton -->
+            <button pButton 
+                    pRipple 
+                    type="submit" 
+                    label="Enviar"
+                    *ngIf="!update" 
+                    class="p-button-outlined p-button-warning mt-2"
+                    [disabled]="enableButton()">
+            </button>
+            <button 
+                    pButton pRipple 
+                    type="button"
+                    (click)="putUser()" 
+                    label="Actualizar" 
+                    *ngIf="update"
+                    class="p-button-outlined p-button-warning mt-2"
+                    [disabled]="enableButton()">
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- <h2 class="mt-5">Form Valid: {{formularioCRUD.valid}}</h2>
+
+<h2>Form Value: {{formularioCRUD.value | json}}</h2>
+
+<pre>Errores :{{formularioCRUD.controls['nombre'].errors | json}}</pre> -->

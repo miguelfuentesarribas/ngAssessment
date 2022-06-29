@@ -1,1 +1,31 @@
-<p>tabla works!</p>
+<div>
+
+    <p-table [value]="usuarios" [resizableColumns]="true" [autoLayout]="true" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Suscrito</th>
+            <th>Pais</th>
+            <th>Ciudad</th>
+            <th>Action</th>
+        </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-usuario>
+            <tr>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.email}}</td>
+                <td><i *ngIf="usuario.check" class="pi pi-check"></i></td>
+                <td>{{usuario.pais}}</td>
+                <td>{{usuario.ciudad}}</td>
+                <td>
+                    
+                    <i class="pi pi-trash me-3 delete" (click)="delete(usuario)"></i>
+                    <i class="pi pi-pencil update" (click)="uptate(usuario)"></i>
+                    
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+

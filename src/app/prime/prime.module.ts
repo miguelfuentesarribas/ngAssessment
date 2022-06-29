@@ -5,7 +5,13 @@ import {MenuModule} from 'primeng/menu';
 import {DividerModule} from 'primeng/divider';
 import {ListboxModule} from 'primeng/listbox';
 import {FieldsetModule} from 'primeng/fieldset';
-
+import {PasswordModule} from 'primeng/password';
+import {CheckboxModule} from 'primeng/checkbox';
+import {InputTextModule} from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import {TableModule} from 'primeng/table';
+import {DropdownModule} from 'primeng/dropdown';
+import { CardModule} from 'primeng/card';
 
 
 @NgModule({
@@ -15,7 +21,14 @@ import {FieldsetModule} from 'primeng/fieldset';
     MenuModule,
     DividerModule,
     ListboxModule,
-    FieldsetModule   
+    FieldsetModule,
+    PasswordModule,
+    InputTextModule,
+    CheckboxModule,
+    FormsModule,
+    TableModule,
+    DropdownModule,
+    CardModule
   ]
 })
 export class PrimeModule { }

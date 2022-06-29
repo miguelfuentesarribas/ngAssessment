@@ -1,0 +1,33 @@
+<div class="m-5">
+    <h2><u>Controlador</u></h2>
+
+    <div class="grid p-fluid mt-3">
+
+        <form autocomplete="off" [formGroup]="formLight" >
+            <div class=" row">
+                <div class="list col-4">
+                    <p-dropdown [options]="lights" 
+                                formControlName="selector"
+                                optionLabel="color"
+                                (onChange)="changeState($event)">
+                    </p-dropdown>
+                </div>
+
+                <div class="field-checkbox col-6 d-flex align-items-center">
+
+                    <p-checkbox (onChange)="changeState($event)" formControlName="onOff" [binary]="true" inputId="binary" class="me-3"></p-checkbox>
+                    <label for="binary">
+                        <span [ngClass]="{'fw-bold fs-3' : onOff}">encencido</span>
+                            /
+                        <span [ngClass]="{'fw-bold fs-3' : !onOff}">apagado</span>
+                    </label>
+                    
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>

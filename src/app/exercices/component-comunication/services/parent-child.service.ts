@@ -14,8 +14,8 @@ export class ParentChildService {
   
 
   // servicio puro
-  claseHijo!: ChildComponent;
-  clasePadre!: ParentComponent;
+  classChild!: ChildComponent;
+  classParent!: ParentComponent;
 
   
   constructor() { }

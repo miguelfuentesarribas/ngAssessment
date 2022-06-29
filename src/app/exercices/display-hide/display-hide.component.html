@@ -1,1 +1,25 @@
-<p>display-hide works!</p>
+<div class="m-5 d-flex justify-content-center">
+    <button pButton 
+            pRipple 
+            type="button"
+            label="{{show ? 'Ocultar' : 'Enseñar'}}" 
+            class="p-button-raised p-button-warning"
+            (click)="updateState()">
+    </button>
+
+    <button pButton 
+            *ngIf="show"
+            pRipple 
+            type="button"
+            label="{{showExt ? 'Parar' : 'Girar'}}" 
+            class=" ms-4 p-button-raised p-button-warning"
+            (click)="updateSpin()">
+    </button>
+
+</div>
+
+<div class="m-5 d-flex justify-content-center" 
+     id="main"
+     *ngIf="show">
+    <h1 class="m-5" style="font-size: 5rem">Hello Word! <i [ngClass]="{'pi-spin': showExt}" class="pi" style="font-size: 6rem">🌍</i></h1>
+</div>

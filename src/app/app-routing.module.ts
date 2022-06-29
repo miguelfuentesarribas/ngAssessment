@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DisplayHideComponent } from './exercices/display-hide/display-hide.component';
 import { CRUDComponent } from './exercices/crud/crud.component';
 import { LightSwitchComponent } from './exercices/light-switch/light-switch.component';
-import { ExternallibraryComponent } from './exercices/externallibrary/externallibrary.component';
 import { ParentComponent } from './exercices/component-comunication/components/parent/parent.component';
+import { ExternalLIbraryComponent } from './exercices/external-library/external-library.component';
 
 const routes: Routes = [
   {
@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'external_library',
-    component: ExternallibraryComponent
+    component: ExternalLIbraryComponent
   },
   {
     path: '**',

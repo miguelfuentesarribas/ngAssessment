@@ -1,20 +1,22 @@
 .header {
     display: flex;
     justify-content: space-between;
-    
 }
-
 
 .menu {
     margin: 0px;
     height: 80px;
-    
     width: 80px;
-    background-color: var(--surface-a);
+    background-color: var(--surface-b);
     display: flex;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
+}
+
+.repo{
+    background-color: var(--surface-b);
+    align-items: center;
 }
 
 .hoverable:hover {
@@ -31,7 +33,7 @@
 }
 
 h1 {
-    margin: 20px;
+    margin: 16px;
     white-space: nowrap;
 }
 
