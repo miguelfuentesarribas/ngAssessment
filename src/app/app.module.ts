@@ -11,6 +11,7 @@ import { ParentChildService } from './exercices/component-comunication/services/
 import { CRUDModule } from './exercices/crud/crud.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LightSwitchModule } from './exercices/light-switch/light-switch.module';
+import { ExternalLibraryModule } from './exercices/external-library/external-library.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LightSwitchModule } from './exercices/light-switch/light-switch.module'
     SharedModule,
     DisplayHideModule,
     HttpClientModule,
-    LightSwitchModule
+    LightSwitchModule,
+    ExternalLibraryModule
   ],
   providers: [ParentChildService],
   bootstrap: [AppComponent]

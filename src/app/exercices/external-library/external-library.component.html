@@ -1,1 +1,51 @@
-<p>external-library works!</p>
+<div class="m-4">    
+    <h2>Valor en dolares de CryptoCurencies</h2>
+    <hr>
+    
+    <div>
+        <div class="alert alert-dark"
+             *ngIf="this.cryptoChartData.datasets[0].data.length == 0;else divGrafica">
+            Loading Data....
+        </div>
+    
+        <ng-template #divGrafica>
+            <div class="row">
+                <div class="col">
+            
+                    <div style="display: block">
+                        <canvas baseChart
+                                class="m-3"
+                                [data]="cryptoChartData"
+                                [type]="cryptoChartType">
+                        </canvas>
+                    </div>
+            
+                </div>
+            </div>
+                
+        </ng-template>
+    </div>
+
+    <div >
+        <div class="alert alert-dark"
+             *ngIf="this.cryptoChartData.datasets[0].data.length == 0;else divGrafica2">
+            Loading Data....
+        </div>
+        <ng-template #divGrafica2>
+            <div class="row m-6">
+                <div class="col">
+            
+                    <div style="display: block">
+                        <canvas baseChart
+                                class="m-3"
+                                [data]="cryptoChartData"
+                                [type]="cryptoChartType2">
+                        </canvas>
+                    </div>
+            
+                </div>
+            </div>
+                
+        </ng-template>        
+    </div>
+</div>
