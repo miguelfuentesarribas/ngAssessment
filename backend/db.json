@@ -1,0 +1,31 @@
+{
+  "usuarios": [
+    {
+      "nombre": "Miguel",
+      "password": "12345678",
+      "email": "miguel@ejemplo.com",
+      "check": true,
+      "pais": "Spain",
+      "ciudad": "jaen",
+      "id": 1
+    },
+    {
+      "nombre": "Martha",
+      "password": "12345678",
+      "email": "martha@yahoo.com",
+      "check": false,
+      "pais": "USA",
+      "ciudad": "New York",
+      "id": 2
+    },
+    {
+      "nombre": "Frank",
+      "password": "12345678",
+      "email": "miguel@ejemplo.com",
+      "check": true,
+      "pais": "UK",
+      "ciudad": "jaen",
+      "id": 3
+    }
+  ]
+}
