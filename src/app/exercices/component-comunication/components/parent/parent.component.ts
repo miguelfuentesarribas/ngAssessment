@@ -15,18 +15,23 @@ export class ParentComponent implements OnInit {
   
   parentMessageService = "Parent using service";
   parentMessageInput = "Parent using input property";
+  parentMessageInput2 = "Parent using input property ";
   parentMessageObserbable = "Parent using Observable";
 
+  index: number = 0;
+
   //input 
-  inputProperty() {    
-    this.mensajeParaHijo = this.parentMessageInput;
-    console.log(this.mensajeParaHijo);
-    
+  inputProperty() {
+    if (this.mensajeParaHijo == this.parentMessageInput){
+      this.mensajeParaHijo = this.parentMessageInput2;
+    } else {
+      this.mensajeParaHijo = this.parentMessageInput;
+    }
   }
 
   //output
   SendToParent(event: any) {
-    this.mensajeFinalPadre = event
+    this.mensajeFinalPadre = event;
   }
   
   // service
@@ -45,7 +50,7 @@ export class ParentComponent implements OnInit {
   
   // servicio puro
   usePureService() {
-    this.pcs.classChild.messageForChild = this.parentMessageService
+    this.pcs.classChild.messageForChild = this.parentMessageService;
   }
 
 }
