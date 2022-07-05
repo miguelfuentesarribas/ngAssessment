@@ -26,6 +26,18 @@ export class ExternalLIbraryComponent implements OnInit {
   public cryptoChartType: ChartType = 'bar';
   public cryptoChartType2: ChartType = 'pie';
 
+  chartOptions =  { 
+    responsive: true, 
+    fontColor: 'red',
+    options:{
+        legend:{
+            labels:{
+                fontColor:'white'//change the color
+            }
+        }
+    }
+};
+
 
   constructor(private gs: GraficasService) { }
 

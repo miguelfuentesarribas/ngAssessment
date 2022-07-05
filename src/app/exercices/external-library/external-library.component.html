@@ -12,8 +12,9 @@
             <div class="row">
                 <div class="col">
             
-                    <div style="display: block">
+                    <div style="background-color: var( --surface-b); border-radius: 15px;">
                         <canvas baseChart
+                                [options]="chartOptions"
                                 class="m-3"
                                 [data]="cryptoChartData"
                                 [type]="cryptoChartType">
@@ -35,7 +36,7 @@
             <div class="row m-6">
                 <div class="col">
             
-                    <div style="display: block">
+                    <div style="background-color: var( --surface-b); border-radius: 15px;">
                         <canvas baseChart
                                 class="m-3"
                                 [data]="cryptoChartData"

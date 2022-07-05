@@ -30,7 +30,7 @@ export class GraficasService {
             this.names.push(element.name); 
             this.pricesUsd.push(+parseFloat(element.priceUsd).toFixed(10));
 
-            if (+parseFloat(element.priceUsd).toFixed(10) > 1) {
+            if (+parseFloat(element.priceUsd).toFixed(10) >= 1) {
               this.names.pop();
               this.pricesUsd.pop();
             }
