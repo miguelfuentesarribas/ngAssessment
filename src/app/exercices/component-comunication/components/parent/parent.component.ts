@@ -11,22 +11,17 @@ import { ParentChildService } from '../../services/parent-child.service';
 export class ParentComponent implements OnInit {
 
   mensajeFinalPadre!: string;
-  mensajeParaHijo!: string;
+  mensajeParaHijo!: String;
   
   parentMessageService = "Parent using service";
   parentMessageInput = "Parent using input property";
-  parentMessageInput2 = "Parent using input property ";
   parentMessageObserbable = "Parent using Observable";
 
   index: number = 0;
 
   //input 
   inputProperty() {
-    if (this.mensajeParaHijo == this.parentMessageInput){
-      this.mensajeParaHijo = this.parentMessageInput2;
-    } else {
-      this.mensajeParaHijo = this.parentMessageInput;
-    }
+    this.mensajeParaHijo = new String (this.parentMessageInput);
   }
 
   //output

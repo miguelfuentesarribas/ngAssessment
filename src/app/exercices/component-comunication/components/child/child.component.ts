@@ -17,7 +17,7 @@ export class ChildComponent implements OnInit {
 
 
   //input
-  @Input() messageForChild!: string;
+  @Input() messageForChild!: String;
 
 
   //output
