@@ -17,7 +17,6 @@ export class ParentComponent implements OnInit {
   parentMessageInput = "Parent using input property";
   parentMessageObserbable = "Parent using Observable";
 
-  index: number = 0;
 
   //input 
   inputProperty() {
@@ -29,6 +28,7 @@ export class ParentComponent implements OnInit {
     this.mensajeFinalPadre = event;
   }
   
+
   // service
   constructor(private pcs: ParentChildService) {
     this.pcs.classParent = this;
@@ -40,8 +40,8 @@ export class ParentComponent implements OnInit {
 
   ngOnInit(): void {
     this.pcs.menssageForParent.subscribe(resp => this.mensajeFinalPadre = resp);
-
   }
+  
   
   // servicio puro
   usePureService() {

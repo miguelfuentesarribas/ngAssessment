@@ -5,7 +5,6 @@
         
         <form autocomplete="off" [formGroup]="formularioCRUD" (ngSubmit)="enviarForm()">
             
-            <!-- nombre -->
             <div class="row mb-2">
                 <label class="mb-1">Nombre</label>
                 <div>
@@ -17,11 +16,9 @@
                 </div>
             </div>
             
-            <!-- contraseña -->
             <div class="row mb-2">
                 <label class="mb-1">Password</label>
                 <div>
-                    <!-- [(ngModel)]="value3" -->
                     <input type="password" 
                             pInputText
                             class="form-control "
@@ -30,7 +27,6 @@
                 </div>
             </div>
 
-            <!-- contraseña2 -->
             <div class="row mb-2">
                 <label class="mb-1">Confirm password</label>
                 <div>
@@ -46,7 +42,6 @@
                 </span>
             </div>
 
-            <!-- correo -->
             <div class="row mb-3">
                 <label class="mb-1">Email</label>
                 <div>
@@ -59,7 +54,6 @@
                 </div>
             </div>
             
-            <!-- check ofertas -->
             <p-checkbox [binary]="true" 
                         inputId="binary" 
                         class="mb-3"
@@ -67,8 +61,6 @@
             </p-checkbox>
             <label for="binary" class="mb-3 ms-3">Enviame ofertas promocionales</label> 
 
-
-            <!-- list paises -->
             <p-dropdown [options]="country" 
                         formControlName="pais"
                         optionLabel="name"
@@ -79,7 +71,6 @@
                 pais Obligatorio*
             </span>
             
-            <!-- ciudades -->
             <div class="row mb-2 mt-2">
                 <label class="mb-1">Ciudad</label>
                 <div>
@@ -91,7 +82,6 @@
                 </div>
             </div>
 
-            <!-- boton -->
             <button pButton 
                     pRipple 
                     type="submit" 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-crud',
@@ -6,11 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 
 })
-export class CRUDComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class CRUDComponent {
 
 }
