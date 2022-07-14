@@ -14,20 +14,25 @@
     white-space: nowrap;
 }
 
+.menuContainer{
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
 .repo{
     background-color: var(--surface-b);
     align-items: center;
+}
+
+.link {
+    height: 80px;
 }
 
 .hoverable:hover {
     background-color: var(--surface-100);
 }
 
-.menuContainer{
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-}
 .start i {
     font-size: 25px;
 }

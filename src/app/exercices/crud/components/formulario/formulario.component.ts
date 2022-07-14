@@ -8,7 +8,8 @@ import { JsonServerService } from '../../services/json-server.service';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
-  styles: [
+  styleUrls: [
+    `./formulario.component.css`
   ]
 })
 export class FormularioComponent implements OnInit {

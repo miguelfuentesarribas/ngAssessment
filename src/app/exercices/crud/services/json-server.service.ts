@@ -8,6 +8,8 @@ import { Usuario } from '../../../interfaces/interfaces';
 })
 export class JsonServerService {
   
+  private _baseUrl:string = 'http://localhost:3030/usuarios'
+
   private subject = new Subject<void>();
   
   constructor(private http: HttpClient) {}
@@ -22,24 +24,24 @@ export class JsonServerService {
   
   
   getUsersList(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>('http://localhost:3000/usuarios')
+    return this.http.get<Usuario[]>(`${this._baseUrl}`)
   }
   
   postUser(usuario: Usuario): Observable<Usuario> {
     //console.log(JSON.stringify(usuario));
     let header = new HttpHeaders().set('Content-Type', 'application/json')
     
-    return this.http.post<Usuario>('http://localhost:3000/usuarios', usuario, {headers: header});
+    return this.http.post<Usuario>(`${this._baseUrl}`, usuario, {headers: header});
   }
   
   DelUser (id: number): Observable<any> {
-    return this.http.delete<any>(`http://localhost:3000/usuarios/${id}`);
+    return this.http.delete<any>(`${this._baseUrl}{id}`);
   }
 
   putUser(usuario: Usuario): Observable<Usuario> {
     console.log(JSON.stringify(usuario));
     let header = new HttpHeaders().set('Content-Type', 'application/json')  
-    return this.http.put<Usuario>(`http://localhost:3000/usuarios/${usuario.id}`, usuario, {headers: header});
+    return this.http.put<Usuario>(`${this._baseUrl}${usuario.id}`, usuario, {headers: header});
   }
 
 }

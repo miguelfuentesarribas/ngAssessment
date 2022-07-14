@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Light } from 'src/app/interfaces/interfaces';
 import { HandlerService } from '../../services/handler.service';
@@ -6,10 +6,12 @@ import { HandlerService } from '../../services/handler.service';
 @Component({
   selector: 'app-controller',
   templateUrl: './controller.component.html',
-  styleUrls: ['./controller.component.css']
+  styles: [`
+    h2 {font-size: 7vh;}
+  `]
 })
 
-export class ControllerComponent implements OnInit {
+export class ControllerComponent {
 
   onOff: boolean = false;
 
@@ -29,17 +31,9 @@ export class ControllerComponent implements OnInit {
       ]
    }
 
-  ngOnInit(): void {
-  }
-
   changeState(event: any) {
-    
-    if(event.checked !== undefined) {
-      this.onOff = event.checked;
-      this.hs.classSemaforo.onOff = event.checked;
-    } else {
-      this.hs.classSemaforo.color = event.value.color; 
-    }
-    
+    event.checked !== undefined ?
+      (this.onOff = event.checked, this.hs.classSemaforo.onOff = event.checked) :
+      this.hs.classSemaforo.color = event.value.color;
   }
 }
