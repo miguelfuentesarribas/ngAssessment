@@ -15,7 +15,7 @@ export interface Usuario {
     password: string,
     email: string,
     check: boolean,
-    pais?: string,
+    pais?: object,
     ciudad: string,
 }
 

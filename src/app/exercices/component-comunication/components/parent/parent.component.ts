@@ -24,7 +24,7 @@ export class ParentComponent implements OnInit {
   }
 
   //output
-  SendToParent(event: any) {
+  SendToParent(event: string) {
     this.mensajeFinalPadre = event;
   }
   
