@@ -37,7 +37,7 @@
                             [formControlName]="crudControls.PASSWORD2">
                 </div>
                 <span class="form-text text-danger"
-                        *ngIf="passwordMatch('password', 'password2')">
+                        *ngIf="crudForm.errors">
                     las contraseñas no coinciden
                 </span>
             </div>
@@ -114,3 +114,4 @@
 <h2>Form Value: {{crudForm.value | json}}</h2>
 
 <pre>Errores nombre :{{crudForm.controls['nombre'].errors | json}}</pre>
+<pre>Errores iguales :{{crudForm.errors}}</pre>

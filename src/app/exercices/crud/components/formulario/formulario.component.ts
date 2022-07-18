@@ -61,6 +61,8 @@ export class FormularioComponent implements OnInit {
         ciudad
       })
     })
+    console.log(this.crudForm);
+    
     
   }
 
@@ -83,10 +85,7 @@ export class FormularioComponent implements OnInit {
       ciudad
     } 
 
-    this._jss.postUser(this.usuario).subscribe(response => {
-                                             console.log(response)
-                                             this._jss.sendClick();
-                                            });
+    this._jss.postUser(this.usuario).subscribe(response => {this._jss.sendClick()});
     
     this.crudForm.markAllAsTouched();
     return;
@@ -120,9 +119,6 @@ export class FormularioComponent implements OnInit {
       ciudad
     } 
 
-    this._jss.putUser(this.usuario).subscribe(response => {
-      console.log(response)
-      this._jss.sendClick();
-     });
+    this._jss.putUser(this.usuario).subscribe(response => {this._jss.sendClick()});
   }
 }
