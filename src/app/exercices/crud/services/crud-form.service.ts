@@ -12,16 +12,15 @@ export class CrudFormService {
   private _CrudFormControls = CrudControls;
 
   public crudForm = this._fb.group({
-    [this._CrudFormControls.ID]:   [0, [Validators.required],],
-    [this._CrudFormControls.NOMBRE]: [ '', [Validators.required],],
-    [this._CrudFormControls.PASSWORD]: [ '', [Validators.required],],
-    [this._CrudFormControls.PASSWORD2]: [ '', [Validators.required],],
-    [this._CrudFormControls.EMAIL]: [ '', [Validators.required],],
-    [this._CrudFormControls.PAIS]: [ {name: 'hola'}, [Validators.required],],
-    [this._CrudFormControls.CHECK]: [ false, [Validators.required],],
-    [this._CrudFormControls.CIUDAD]: [ '', [Validators.required],]
+    [this._CrudFormControls.ID]:   [0, [Validators.required]],
+    [this._CrudFormControls.NOMBRE]: [ 'miguel', [Validators.required]],
+    [this._CrudFormControls.PASSWORD]: [ '12345678', [Validators.required]],
+    [this._CrudFormControls.PASSWORD2]: [ '12345678', [Validators.required]],
+    [this._CrudFormControls.EMAIL]: [ 'miguel.example.com', [Validators.required]],
+    [this._CrudFormControls.PAIS]: [ {name: 'UK'},[Validators.required]],
+    [this._CrudFormControls.CHECK]: [ false, [Validators.required]],
+    [this._CrudFormControls.CIUDAD]: [ 'jaen', [Validators.required]]
   })
-  country: any;
-
+  
   constructor(private _fb: FormBuilder ) { }
 }

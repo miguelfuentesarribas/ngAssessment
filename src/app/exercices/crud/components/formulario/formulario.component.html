@@ -28,7 +28,7 @@
             </div>
 
             <div class="row mb-2">
-                <label class="mb-1">Confirm {{crudControls.PASSWORD2 | titlecase}}</label>
+                <label class="mb-1">Confirm {{crudControls.PASSWORD | titlecase}}</label>
                 <div>
                     <input type="password" 
                             pInputText
@@ -61,13 +61,19 @@
             </p-checkbox>
             <label for="binary" class="mb-3 ms-3">Enviame ofertas promocionales</label> 
 
-            <p-dropdown [options]="country" 
+            <div class="row mb-3">
+                <label class="mb-1">{{crudControls.PAIS | titlecase}}</label>
+                <div>
+                    <p-dropdown [options]="country" 
                         [formControlName]="crudControls.PAIS"
                         optionLabel="name"
                         placeholder="País">
-            </p-dropdown>
+                    </p-dropdown>
+                </div>
+            </div>
+
             <span class="form-text text-light ms-2"
-                  *ngIf="!crudForm.valid">
+                  *ngIf="!crudForm.value.pais">
                 pais Obligatorio*
             </span>
             
@@ -107,4 +113,4 @@
 
 <h2>Form Value: {{crudForm.value | json}}</h2>
 
-<pre>Errores :{{crudForm.controls['nombre'].errors | json}}</pre>
+<pre>Errores nombre :{{crudForm.controls['nombre'].errors | json}}</pre>

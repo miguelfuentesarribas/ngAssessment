@@ -8,13 +8,21 @@ import { ChildComponent } from '../components/child/child.component';
 })
 export class ParentChildService {
 
-  // get classChild () {
-  //   return this._classChild;
-  // }
+  get classChild(): ChildComponent {
+    return this._classChild;
+  }
 
-  // set classChild () {
-  //   this._classChild
-  // }
+  set classChild(value: ChildComponent) {
+    this._classChild = value;
+  }
+
+  get classParent(): ParentComponent {
+    return this._classParent;
+  }
+
+  set classParent(value: ParentComponent) {
+    this._classParent = value;
+  }
 
   //observable
   menssageForParent: Subject<string> = new Subject<string>();
@@ -22,10 +30,7 @@ export class ParentChildService {
   
 
   // servicio puro
-  classChild!: ChildComponent;
-  classParent!: ParentComponent;
-
-  // añadir private
-  
+  private _classChild!: ChildComponent;
+  private _classParent!: ParentComponent;
   
 }

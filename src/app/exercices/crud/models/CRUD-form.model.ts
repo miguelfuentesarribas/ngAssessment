@@ -4,7 +4,7 @@ export interface ICrudUserForm {
     password: string ;
     password2: string ;
     email: string ;
-    pais?: object;
+    pais: string;
     check: boolean ;
     ciudad: string ;
 }
