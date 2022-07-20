@@ -27,6 +27,7 @@ export class SidebarComponent implements OnInit {
         {label: "Search on Type", disabled: true},
         {label: "Lightswitch", disabled: false, routerLink: ['/light_switch']},
         {label: "External Library", disabled: false, routerLink: ['/external_library']},
+        {label: "DVD", disabled: false, routerLink: ['/dvd']},
         {label: "Counter", disabled: true},
       ]
     }]

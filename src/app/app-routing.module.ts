@@ -5,6 +5,7 @@ import { CRUDComponent } from './exercices/crud/crud.component';
 import { LightSwitchComponent } from './exercices/light-switch/light-switch.component';
 import { ParentComponent } from './exercices/component-comunication/components/parent/parent.component';
 import { ExternalLIbraryComponent } from './exercices/external-library/external-library.component';
+import { DvdComponent } from './exercices/dvd/dvd.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'external_library',
     component: ExternalLIbraryComponent
+  },
+  {
+    path: 'dvd',
+    component: DvdComponent
   },
   {
     path: '**',

@@ -12,6 +12,7 @@ import { CRUDModule } from './exercices/crud/crud.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LightSwitchModule } from './exercices/light-switch/light-switch.module';
 import { ExternalLibraryModule } from './exercices/external-library/external-library.module';
+import { DvdModule } from './exercices/dvd/dvd.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ExternalLibraryModule } from './exercices/external-library/external-lib
     DisplayHideModule,
     HttpClientModule,
     LightSwitchModule,
-    ExternalLibraryModule
+    ExternalLibraryModule,
+    DvdModule
   ],
   providers: [ParentChildService],
   bootstrap: [AppComponent]

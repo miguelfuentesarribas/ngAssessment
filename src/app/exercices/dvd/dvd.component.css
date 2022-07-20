@@ -1,0 +1,15 @@
+.container{
+    height: 345px;
+    width: 484px;
+    background-color: black;
+    padding: 0;
+}
+
+.logo {
+    position: absolute;
+    height: 45px;
+    width: 84px;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}

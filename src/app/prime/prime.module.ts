@@ -28,7 +28,8 @@ import { CardModule} from 'primeng/card';
     FormsModule,
     TableModule,
     DropdownModule,
-    CardModule
+    CardModule,
+    ButtonModule
   ]
 })
 export class PrimeModule { }
