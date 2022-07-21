@@ -19,13 +19,24 @@
       "id": 2
     },
     {
+      "id": 3,
       "nombre": "Frank",
       "password": "12345678",
-      "email": "miguel@ejemplo.com",
+      "password2": "12345678",
+      "email": "frank@ejemplo.com",
       "check": true,
       "pais": "UK",
-      "ciudad": "jaen",
-      "id": 3
+      "ciudad": "jaen"
+    },
+    {
+      "id": 4,
+      "nombre": "miguel",
+      "password": "12345678",
+      "password2": "12345678",
+      "email": "sfdgdasfl.example.com",
+      "check": true,
+      "pais": "Italy",
+      "ciudad": "jaen"
     }
   ]
 }

@@ -3,95 +3,91 @@
 
         <h3>Formulario de registro</h3>
         
-        <form autocomplete="off" [formGroup]="formularioCRUD" (ngSubmit)="enviarForm()">
+        <form autocomplete="off" [formGroup]="crudForm" (ngSubmit)="enviarForm()">
             
-            <!-- nombre -->
             <div class="row mb-2">
-                <label class="mb-1">Nombre</label>
+                <label class="mb-1">{{crudControls.NOMBRE | titlecase}}</label>
                 <div>
                     <input type="text" 
                             pInputText
                             class="form-control"
                             placeholder="Username"
-                            formControlName="nombre">
+                            [formControlName]="crudControls.NOMBRE">
                 </div>
             </div>
             
-            <!-- contraseña -->
             <div class="row mb-2">
-                <label class="mb-1">Password</label>
+                <label class="mb-1">{{crudControls.PASSWORD | titlecase}}</label>
                 <div>
-                    <!-- [(ngModel)]="value3" -->
                     <input type="password" 
                             pInputText
                             class="form-control "
                             placeholder="Pass"
-                            formControlName="password">
+                            [formControlName]="crudControls.PASSWORD">
                 </div>
             </div>
 
-            <!-- contraseña2 -->
             <div class="row mb-2">
-                <label class="mb-1">Confirm password</label>
+                <label class="mb-1">Confirm {{crudControls.PASSWORD | titlecase}}</label>
                 <div>
                     <input type="password" 
                             pInputText
                             class="form-control "
                             placeholder="Pass"
-                            formControlName="password2">
+                            [formControlName]="crudControls.PASSWORD2">
                 </div>
                 <span class="form-text text-danger"
-                        *ngIf="passwordMatch('password', 'password2')">
+                        *ngIf="crudForm.errors">
                     las contraseñas no coinciden
                 </span>
             </div>
 
-            <!-- correo -->
             <div class="row mb-3">
-                <label class="mb-1">Email</label>
+                <label class="mb-1">{{crudControls.EMAIL | titlecase}}</label>
                 <div>
                     <input type="email" 
                             pInputText
                             class="form-control "
                             placeholder="Example@..."
-                            formControlName="email">
+                            [formControlName]="crudControls.EMAIL">
 
                 </div>
             </div>
             
-            <!-- check ofertas -->
             <p-checkbox [binary]="true" 
                         inputId="binary" 
                         class="mb-3"
-                        formControlName="check">
+                        [formControlName]="crudControls.CHECK">
             </p-checkbox>
             <label for="binary" class="mb-3 ms-3">Enviame ofertas promocionales</label> 
 
-
-            <!-- list paises -->
-            <p-dropdown [options]="country" 
-                        formControlName="pais"
+            <div class="row mb-3">
+                <label class="mb-1">{{crudControls.PAIS | titlecase}}</label>
+                <div>
+                    <p-dropdown [options]="country" 
+                        [formControlName]="crudControls.PAIS"
                         optionLabel="name"
                         placeholder="País">
-            </p-dropdown>
+                    </p-dropdown>
+                </div>
+            </div>
+
             <span class="form-text text-light ms-2"
-                  *ngIf="!formularioCRUD.valid">
+                  *ngIf="!crudForm.value.pais">
                 pais Obligatorio*
             </span>
             
-            <!-- ciudades -->
             <div class="row mb-2 mt-2">
-                <label class="mb-1">Ciudad</label>
+                <label class="mb-1">{{crudControls.CIUDAD | titlecase}}</label>
                 <div>
                     <input type="text" 
                             pInputText
                             class="form-control "
                             placeholder="Origen"
-                            formControlName="ciudad">
+                            [formControlName]="crudControls.CIUDAD">
                 </div>
             </div>
 
-            <!-- boton -->
             <button pButton 
                     pRipple 
                     type="submit" 
@@ -113,8 +109,9 @@
     </div>
 </div>
 
-<!-- <h2 class="mt-5">Form Valid: {{formularioCRUD.valid}}</h2>
+<h2 class="mt-5">Form Valid: {{crudForm.valid}}</h2>
 
-<h2>Form Value: {{formularioCRUD.value | json}}</h2>
+<h2>Form Value: {{crudForm.value | json}}</h2>
 
-<pre>Errores :{{formularioCRUD.controls['nombre'].errors | json}}</pre> -->
+<pre>Errores nombre :{{crudForm.controls['nombre'].errors | json}}</pre>
+<pre>Errores iguales :{{crudForm.errors}}</pre>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../../../../interfaces/interfaces';
 import { JsonServerService } from '../../services/json-server.service';
 import { BrothersService } from '../../services/brothers.service';
 import { Subscription } from 'rxjs';
+import { ICrudUserForm } from '../../models/CRUD-form.model';
 
 @Component({
   selector: 'app-tabla',
@@ -18,9 +18,10 @@ import { Subscription } from 'rxjs';
   }
   `]
 })
+
 export class TablaComponent implements OnInit {
 
-  usuarios!: Usuario[];
+  usuarios!: ICrudUserForm[];
   
   update: boolean = false;
 
@@ -29,30 +30,26 @@ export class TablaComponent implements OnInit {
   constructor(private jss: JsonServerService,
               private bs: BrothersService) { 
                 this.bs.classTabla = this;
-
                 this.subscription = this.jss.getClickEventDelete().subscribe(() => this.ngOnInit())
               }
 
   ngOnInit(): void {
-    
-    this.jss.getUsersList().subscribe(usuarios => {this.usuarios = usuarios});
-    
+    this.jss.getUsersList().subscribe(usuarios => {this.usuarios = usuarios});    
   }
 
-
-  delete(usuario: Usuario) {
+  delete(usuario: ICrudUserForm) {
     this.jss.DelUser(usuario.id!).subscribe(() => this.ngOnInit());
   }
 
-  uptate(usuario: Usuario) {
+  uptate(usuario: ICrudUserForm) {
     
     this.bs.setUserToUpdate(usuario)
     console.log(usuario);
     
-    
     if (this.bs.classFormulario.update === false) {
       this.bs.classFormulario.update = !this.bs.classFormulario.update
     }
+
   }
 
 }

@@ -8,19 +8,14 @@ import { ParentChildService } from '../../services/parent-child.service';
   styleUrls: [`./styles.css`]
 })
 export class ChildComponent implements OnInit {
-  //variables
- 
 
   childMessageService = "Child using service";
   childMessageInput = "Child using output event";
   childMessageObserbable = "Child using subject";
 
+  //  input/output
+  @Input() messageForChild!: String;
 
-  //input
-  @Input() messageForChild!: string;
-
-
-  //output
   @Output() mesajeForParent = new EventEmitter<string>();
 
   outputEvent() {
@@ -28,12 +23,12 @@ export class ChildComponent implements OnInit {
   }
 
 
-  //service
   constructor(private pcs: ParentChildService) {
     this.pcs.classChild = this;
   }
 
-  
+
+  //service
   useObservable() {
     this.pcs.menssageForParent.next(this.childMessageObserbable);  
   }
@@ -42,7 +37,8 @@ export class ChildComponent implements OnInit {
     this.pcs.menssageForChild.subscribe(resp => this.messageForChild = resp);
   }
 
- // servicio puro
+
+  // servicio puro
   usePureService () {
     this.pcs.classParent.mensajeFinalPadre = this.childMessageService;
   }
