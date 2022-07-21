@@ -1,9 +1,17 @@
+/* .container{
+    height: 495px;
+    width: 884px;
+    background-color: black;
+    padding: 0;
+} */
+ 
 .container{
-    height: 345px;
-    width: 484px;
+    height: 845px;
+    width: 534px;
     background-color: black;
     padding: 0;
 }
+
 
 .logo {
     position: absolute;
