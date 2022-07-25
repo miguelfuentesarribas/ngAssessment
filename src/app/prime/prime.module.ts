@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import {TableModule} from 'primeng/table';
 import {DropdownModule} from 'primeng/dropdown';
 import { CardModule} from 'primeng/card';
+import {SliderModule} from 'primeng/slider';
+
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { CardModule} from 'primeng/card';
     TableModule,
     DropdownModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    SliderModule
   ]
 })
 export class PrimeModule { }

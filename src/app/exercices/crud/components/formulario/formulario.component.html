@@ -63,20 +63,20 @@
 
             <div class="row mb-3">
                 <label class="mb-1">{{crudControls.PAIS | titlecase}}</label>
-                <div>
+                <div class="d-flex align-items-center">
                     <p-dropdown [options]="country" 
                         [formControlName]="crudControls.PAIS"
                         optionLabel="name"
-                        placeholder="País">
+                        placeholder="País"
+                        class="me-2">
                     </p-dropdown>
+                    <span class="form-text text-light ms-2"
+                          *ngIf="crudForm.value.pais?.name == '--' || crudForm.value.pais?.name == ''">
+                        pais Obligatorio*
+                    </span>
                 </div>
             </div>
 
-            <span class="form-text text-light ms-2"
-                  *ngIf="!crudForm.value.pais">
-                pais Obligatorio*
-            </span>
-            
             <div class="row mb-2 mt-2">
                 <label class="mb-1">{{crudControls.CIUDAD | titlecase}}</label>
                 <div>
@@ -104,14 +104,14 @@
                     *ngIf="update"
                     class="p-button-outlined p-button-warning mt-2"
                     [disabled]="enableButton()">
-            </button>
+            </button> 
         </form>
     </div>
 </div>
 
-<h2 class="mt-5">Form Valid: {{crudForm.valid}}</h2>
+<!-- <h2 class="mt-5">Form Valid: {{crudForm.valid}}</h2>
 
 <h2>Form Value: {{crudForm.value | json}}</h2>
 
 <pre>Errores nombre :{{crudForm.controls['nombre'].errors | json}}</pre>
-<pre>Errores iguales :{{crudForm.errors}}</pre>
+<pre>Errores iguales :{{crudForm.errors}}</pre> -->

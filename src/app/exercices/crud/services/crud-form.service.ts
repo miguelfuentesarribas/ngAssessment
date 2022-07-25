@@ -15,9 +15,9 @@ export class CrudFormService {
     [this._CrudFormControls.ID]:   [0, [Validators.required]],
     [this._CrudFormControls.NOMBRE]: [ 'miguel', [Validators.required]],
     [this._CrudFormControls.PASSWORD]: [ '123456789', [Validators.required, Validators.minLength(8)]],
-    [this._CrudFormControls.PASSWORD2]: [ '12345678', [Validators.required, Validators.minLength(8)]],
+    [this._CrudFormControls.PASSWORD2]: [ '123456789', [Validators.required, Validators.minLength(8)]],
     [this._CrudFormControls.EMAIL]: [ 'miguel.example.com', [Validators.required]],
-    [this._CrudFormControls.PAIS]: [ {name: 'UK'},[Validators.required]],
+    [this._CrudFormControls.PAIS]: [ {name: ''},[Validators.required]],
     [this._CrudFormControls.CHECK]: [ false, [Validators.required]],
     [this._CrudFormControls.CIUDAD]: [ 'jaen', [Validators.required]]
   } ,{

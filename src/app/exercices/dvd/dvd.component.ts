@@ -1,4 +1,4 @@
-import { animate, AnimationBuilder, AnimationPlayer, group, keyframes, query, state, style, transition, trigger } from '@angular/animations';
+import { animate, AnimationBuilder, AnimationPlayer, style } from '@angular/animations';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
@@ -8,29 +8,39 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class DvdComponent {
 
+
+
+  val3: number = 3000;
+
+
+
   movementDirection: string = 'bottomRight';
-  // maxDistX: number = 800;
-  // maxDistY: number = 450;
   
-  maxDistX: number = 450;
-  
+  maxDistX!: number;
+  maxDistY!: number;
+
   lastPositionX: number = 0;
   lastPositionY: number = 0;
   fullTime: number = 4000;
   colorDVD!: string;
   distanceToMoveHere: number = 0;
+  lastDirection!: string;
+  disableButton: boolean = false;
+  stopColors: boolean = false;
 
   @ViewChild('withBuilder') elementRef!: ElementRef;
   @ViewChild('screenSaver') elementSaver!: ElementRef;
 
-  maxDistY: number = 800;
+  
 
   private player!: AnimationPlayer;
 
   constructor(private animationBuilder: AnimationBuilder) { }
   
   ngAfterViewInit() {
-    this.toggle();
+    this.maxDistY = this.elementSaver.nativeElement.scrollHeight - this.elementRef.nativeElement.scrollHeight;
+    this.maxDistX = this.elementSaver.nativeElement.scrollWidth - this.elementRef.nativeElement.scrollWidth;
+    this.bounce(1);
   }
 
   createPlayer() {
@@ -52,9 +62,7 @@ export class DvdComponent {
         
         animationFactory = this.animationBuilder
         .build([
-          style({
-            transform: `translate(${this.lastPositionX}px, ${this.lastPositionY}px)`,
-          }),
+          style({transform: `translate(${this.lastPositionX}px, ${this.lastPositionY}px)`,}),
           animate(this.animationTime(this.distanceToMoveHere), style({
             transform: `translate(${this.lastPositionX += this.distanceToMoveHere}px, ${this.lastPositionY += this.distanceToMoveHere}px)`, 
           }))
@@ -176,14 +184,8 @@ export class DvdComponent {
     this.player = animationFactory.create(this.elementRef.nativeElement);
   } 
 
-  toggle() {
-    this.createPlayer();
-    this.player.play();
-  }
-
   bounce(time: number) {
-    console.log('time bounce ',Math.round(time/10)/100);
-    
+    //console.log('time to bounce ',Math.round(time/10)/100);
     setTimeout(() => {
       this.createPlayer();
       this.player.play();
@@ -191,6 +193,8 @@ export class DvdComponent {
   }
 
   getRandomColor() {
+    this.stopColors ? null : null;
+
     var letters = '0123456789ABCDEF';
     var color = '#';
     for (var i = 0; i < 6; i++) {
@@ -200,7 +204,28 @@ export class DvdComponent {
   }
 
   stop() {
-    this.movementDirection = 'stop';
+
+    this.disableButton = true;
+    
+
+    console.log(this.lastDirection);
+    
+    this.movementDirection == 'stop'?
+      (
+        (this.movementDirection = this.lastDirection),
+        (this.bounce(this.animationTime(this.distanceToMoveHere)))
+      ):
+      (
+        (this.lastDirection = this.movementDirection),
+        (this.movementDirection = 'stop')
+      )
+    ;
+
+    setTimeout(() => {
+      this.disableButton = false
+    }, this.fullTime);
+    
+
   }
 
   animationTime( distancia: number ) {

@@ -20,6 +20,6 @@
         [transitionOptions]="'300ms'" 
         [style]="{width:'15em'}">
     <div class="menuContainer">
-        <p-menu [model]="items"></p-menu>
+        <p-menu [model]="items" (click)="openClose()"></p-menu>
     </div>
 </p-sidebar>

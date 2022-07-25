@@ -35,6 +35,7 @@ export class FormularioComponent implements OnInit {
     this._bs.classFormulario = this;
 
     this.country = [
+      {name: '--'},
       {name: 'USA'},
       {name: 'Italy'},
       {name: 'UK'},
@@ -48,7 +49,6 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit(): void {
     this._bs.getClickEventUpdate().subscribe(({id, nombre, password, email, pais, check, ciudad}) => {
-      console.log(pais);
       
       this.crudForm.patchValue({
         id,
@@ -61,9 +61,6 @@ export class FormularioComponent implements OnInit {
         ciudad
       })
     })
-    console.log(this.crudForm);
-    
-    
   }
 
   enviarForm() {

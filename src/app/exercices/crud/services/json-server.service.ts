@@ -18,7 +18,7 @@ export class JsonServerService {
     this.subject.next()
   }
   
-  getClickEventDelete() {
+  getClickEvent() {
     return this.subject.asObservable();
   }
   

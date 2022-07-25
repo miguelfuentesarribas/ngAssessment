@@ -30,7 +30,7 @@ export class TablaComponent implements OnInit {
   constructor(private jss: JsonServerService,
               private bs: BrothersService) { 
                 this.bs.classTabla = this;
-                this.subscription = this.jss.getClickEventDelete().subscribe(() => this.ngOnInit())
+                this.subscription = this.jss.getClickEvent().subscribe(() => this.ngOnInit())
               }
 
   ngOnInit(): void {
