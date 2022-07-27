@@ -8,13 +8,26 @@ import { ICrudUserForm } from '../../models/CRUD-form.model';
   selector: 'app-tabla',
   templateUrl: './tabla.component.html',
   styles: [`
+  .update{
+    padding: 14%;
+  }
   .update:hover{
     background-color: var(--blue-600);
+    padding: 14%;
     border-radius: 50%;
+    cursor: pointer;
+  }
+  .delete{
+    padding: 14%;
   }
   .delete:hover{
     background-color: var(--red-600);
+    padding: 14%;
+    cursor: pointer;
     border-radius: 50%;
+  }
+  .actions{
+    width: 130px;
   }
   `]
 })
@@ -22,15 +35,13 @@ import { ICrudUserForm } from '../../models/CRUD-form.model';
 export class TablaComponent implements OnInit {
 
   usuarios!: ICrudUserForm[];
-  
   update: boolean = false;
-
   subscription: Subscription;
 
   constructor(private jss: JsonServerService,
               private bs: BrothersService) { 
                 this.bs.classTabla = this;
-                this.subscription = this.jss.getClickEventDelete().subscribe(() => this.ngOnInit())
+                this.subscription = this.jss.getClickEvent().subscribe(() => this.ngOnInit())
               }
 
   ngOnInit(): void {
@@ -42,14 +53,10 @@ export class TablaComponent implements OnInit {
   }
 
   uptate(usuario: ICrudUserForm) {
-    
     this.bs.setUserToUpdate(usuario)
-    console.log(usuario);
-    
+    //console.log(usuario);
     if (this.bs.classFormulario.update === false) {
       this.bs.classFormulario.update = !this.bs.classFormulario.update
     }
-
   }
-
 }

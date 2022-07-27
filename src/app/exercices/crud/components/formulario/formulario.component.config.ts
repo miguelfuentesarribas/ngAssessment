@@ -1,8 +1,8 @@
 export enum CrudControls {
-    ID         ='id',
+    ID         = 'id',
     NOMBRE     = 'nombre',
     PASSWORD   = 'password',
-    PASSWORD2  ='password2',
+    PASSWORD2  = 'password2',
     EMAIL      = 'email',
     PAIS       = 'pais',
     CHECK      = 'check',

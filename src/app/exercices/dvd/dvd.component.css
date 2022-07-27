@@ -1,17 +1,24 @@
-/* .container{
+.container{
     height: 495px;
     width: 884px;
     background-color: black;
     padding: 0;
-} */
+}
  
-.container{
+/* .container{
     height: 845px;
     width: 534px;
     background-color: black;
     padding: 0;
-}
+} */
 
+.formCont {
+    height: 800px;
+    width: 300px;
+    margin: 30px;
+    background-color: rgb(70, 68, 68);
+    padding: 0;
+}
 
 .logo {
     position: absolute;

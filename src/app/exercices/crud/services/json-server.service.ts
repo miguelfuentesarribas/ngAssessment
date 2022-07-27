@@ -10,18 +10,17 @@ export class JsonServerService {
   
   private _baseUrl:string = 'http://localhost:3000/usuarios'
 
-  private subject = new Subject<void>();
+  private _subject = new Subject<void>();
   
   constructor(private http: HttpClient) {}
   
   sendClick() {
-    this.subject.next()
+    this._subject.next()
   }
   
-  getClickEventDelete() {
-    return this.subject.asObservable();
+  getClickEvent() {
+    return this._subject.asObservable();
   }
-  
   
   getUsersList(): Observable<ICrudUserForm[]> {
     return this.http.get<ICrudUserForm[]>(`${this._baseUrl}`)
