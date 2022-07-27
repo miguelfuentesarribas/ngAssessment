@@ -64,40 +64,8 @@ export class FormularioComponent implements OnInit {
   }
 
   enviarForm() {
-    console.log(this.crudForm.controls);
-    let nombre = this.crudForm.controls['nombre'].value!;
-    let password = this.crudForm.controls['password'].value!;
-    let email = this.crudForm.controls['email'].value!;
-    let check = this.crudForm.controls['check'].value!;
-    let pais = this.crudForm.controls['pais'].value?.name!;
-    let ciudad = this.crudForm.controls['ciudad'].value!;
-
-    this.usuario = {
-      nombre,
-      password,
-      password2: password,
-      email,
-      check,
-      pais,
-      ciudad
-    } 
-
-    this._jss.postUser(this.usuario).subscribe(response => {this._jss.sendClick()});
-    
-    this.crudForm.markAllAsTouched();
-    return;
-  }
-
-  passwordMatch(pass1: string, pass2: string) {
-    return !(this.crudForm.get(pass1)?.value === this.crudForm.get(pass2)?.value) 
-  }
-
-  enableButton() {
-    return !this.crudForm.valid;
-  }
-
-  putUser() {
-    let id = this.crudForm.controls['id'].value!;
+    //console.log(this.crudForm.controls);
+    let id = this.crudForm.controls['id'].value!;    
     let nombre = this.crudForm.controls['nombre'].value!;
     let password = this.crudForm.controls['password'].value!;
     let email = this.crudForm.controls['email'].value!;
@@ -116,6 +84,19 @@ export class FormularioComponent implements OnInit {
       ciudad
     } 
 
+    this.usuario.id == 0 ?
+    this._jss.postUser(this.usuario).subscribe(response => {this._jss.sendClick()}) : 
     this._jss.putUser(this.usuario).subscribe(response => {this._jss.sendClick()});
+    
+    this.crudForm.markAllAsTouched();
+    return;
+  }
+
+  passwordMatch(pass1: string, pass2: string) {
+    return !(this.crudForm.get(pass1)?.value === this.crudForm.get(pass2)?.value) 
+  }
+
+  enableButton() {
+    return !this.crudForm.valid;
   }
 }

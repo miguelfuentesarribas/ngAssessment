@@ -91,20 +91,10 @@
             <button pButton 
                     pRipple 
                     type="submit" 
-                    label="Enviar"
-                    *ngIf="!update" 
+                    label="{{update ? 'actualizar' : 'enviar'}}"
                     class="p-button-outlined p-button-warning mt-2"
                     [disabled]="enableButton()">
             </button>
-            <button 
-                    pButton pRipple 
-                    type="button"
-                    (click)="putUser()" 
-                    label="Actualizar" 
-                    *ngIf="update"
-                    class="p-button-outlined p-button-warning mt-2"
-                    [disabled]="enableButton()">
-            </button> 
         </form>
     </div>
 </div>

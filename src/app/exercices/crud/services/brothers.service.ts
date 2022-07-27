@@ -11,6 +11,7 @@ export class BrothersService {
   
   private _classTabla!: TablaComponent;
   private _classFormulario!: FormularioComponent;
+  private _subject = new Subject<ICrudUserForm>();
 
   public get classFormulario(): FormularioComponent {
     return this._classFormulario;
@@ -28,15 +29,13 @@ export class BrothersService {
     this._classTabla = value;
   }
 
-  private subject = new Subject<ICrudUserForm>();
-
   constructor() { }
 
   setUserToUpdate(user: ICrudUserForm) {
-    this.subject.next(user) 
+    this._subject.next(user) 
   }
 
   getClickEventUpdate() {
-    return this.subject.asObservable();
+    return this._subject.asObservable();
   }
 }
