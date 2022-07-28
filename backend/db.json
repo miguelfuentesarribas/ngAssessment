@@ -28,46 +28,6 @@
       "check": true,
       "pais": "UK",
       "ciudad": "Canada"
-    },
-    {
-      "id": 4,
-      "nombre": "miguel",
-      "password": "123456789",
-      "password2": "123456789",
-      "email": "miguel.example.com",
-      "check": false,
-      "pais": "Italy",
-      "ciudad": "jaen"
-    },
-    {
-      "id": 5,
-      "nombre": "miguel",
-      "password": "123456789",
-      "password2": "123456789",
-      "email": "miguel.example.com",
-      "check": false,
-      "pais": "UK",
-      "ciudad": "jaen"
-    },
-    {
-      "id": 6,
-      "nombre": "miguel",
-      "password": "123456789",
-      "password2": "123456789",
-      "email": "miguel.example.com",
-      "check": false,
-      "pais": "UK",
-      "ciudad": "jaen"
-    },
-    {
-      "id": 7,
-      "nombre": "miguel",
-      "password": "123456789",
-      "password2": "123456789",
-      "email": "miguel.example.com",
-      "check": false,
-      "pais": "Italy",
-      "ciudad": "jaen"
     }
   ]
 }
