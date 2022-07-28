@@ -37,7 +37,7 @@
                             [formControlName]="crudControls.PASSWORD2">
                 </div>
                 <span class="form-text text-danger"
-                        *ngIf="crudForm.errors">
+                        *ngIf="crudForm.hasError('noIguales') ">
                     las contraseñas no coinciden
                 </span>
             </div>
@@ -71,7 +71,7 @@
                         class="me-2">
                     </p-dropdown>
                     <span class="form-text text-light ms-2"
-                          *ngIf="crudForm.value.pais?.name == '--' || crudForm.value.pais?.name == ''">
+                          *ngIf="crudForm.value.pais?.name == '--' || crudForm.hasError('paisVacio')">
                         pais Obligatorio*
                     </span>
                 </div>
@@ -99,9 +99,7 @@
     </div>
 </div>
 
-<!-- <h2 class="mt-5">Form Valid: {{crudForm.valid}}</h2>
-
+<h2 class="mt-5">Form Valid: {{crudForm.valid}}</h2>
 <h2>Form Value: {{crudForm.value | json}}</h2>
-
 <pre>Errores nombre :{{crudForm.controls['nombre'].errors | json}}</pre>
-<pre>Errores iguales :{{crudForm.errors}}</pre> -->
+<pre>Errores añadidos :{{crudForm.errors | json}}</pre>

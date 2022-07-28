@@ -25,6 +25,10 @@ export class JsonServerService {
   getUsersList(): Observable<ICrudUserForm[]> {
     return this.http.get<ICrudUserForm[]>(`${this._baseUrl}`)
   }
+
+  getUser(id: number): Observable<ICrudUserForm> {
+    return this.http.get<ICrudUserForm>(`${this._baseUrl}/${id}`)
+  }
   
   postUser(usuario: ICrudUserForm): Observable<ICrudUserForm> {
     //console.log(JSON.stringify(usuario));
@@ -38,7 +42,7 @@ export class JsonServerService {
   }
 
   putUser(usuario: ICrudUserForm): Observable<ICrudUserForm> {
-    console.log(JSON.stringify(usuario));
+    //console.log(JSON.stringify(usuario));
     let header = new HttpHeaders().set('Content-Type', 'application/json')  
     return this.http.put<ICrudUserForm>(`${this._baseUrl}/${usuario.id}`, usuario, {headers: header});
   }

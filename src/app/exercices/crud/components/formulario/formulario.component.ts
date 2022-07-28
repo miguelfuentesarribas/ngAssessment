@@ -48,18 +48,23 @@ export class FormularioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._bs.getClickEventUpdate().subscribe(({id, nombre, password, email, pais, check, ciudad}) => {
-      
-      this.crudForm.patchValue({
-        id,
-        nombre,
-        password,
-        password2: password,
-        email,
-        pais: {name:pais},
-        check,
-        ciudad
+    this._bs.subject.subscribe(({id}) => {
+
+      this._jss.getUser(id!).subscribe(user => {
+
+        this.crudForm.patchValue({
+          id: user.id,
+          nombre: user.nombre,
+          password: user.password,
+          password2: user.password,
+          email: user.email,
+          pais: {name: user.pais},
+          check: user.check,
+          ciudad: user.ciudad
+        })
+
       })
+    
     })
   }
 
@@ -89,6 +94,7 @@ export class FormularioComponent implements OnInit {
     this._jss.putUser(this.usuario).subscribe(response => {this._jss.sendClick()});
     
     this.crudForm.markAllAsTouched();
+    this.crudForm.reset();
     return;
   }
 

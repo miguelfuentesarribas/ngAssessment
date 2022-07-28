@@ -10,13 +10,14 @@
       "id": 1
     },
     {
+      "id": 2,
       "nombre": "Martha",
       "password": "12345678",
+      "password2": "12345678",
       "email": "martha@yahoo.com",
       "check": false,
       "pais": "USA",
-      "ciudad": "New York",
-      "id": 2
+      "ciudad": "New York"
     },
     {
       "id": 3,
@@ -26,15 +27,45 @@
       "email": "frank@ejemplo.com",
       "check": true,
       "pais": "UK",
-      "ciudad": "jaen"
+      "ciudad": "Canada"
     },
     {
       "id": 4,
       "nombre": "miguel",
-      "password": "12345678",
-      "password2": "12345678",
-      "email": "sfdgdasfl.example.com",
-      "check": true,
+      "password": "123456789",
+      "password2": "123456789",
+      "email": "miguel.example.com",
+      "check": false,
+      "pais": "Italy",
+      "ciudad": "jaen"
+    },
+    {
+      "id": 5,
+      "nombre": "miguel",
+      "password": "123456789",
+      "password2": "123456789",
+      "email": "miguel.example.com",
+      "check": false,
+      "pais": "UK",
+      "ciudad": "jaen"
+    },
+    {
+      "id": 6,
+      "nombre": "miguel",
+      "password": "123456789",
+      "password2": "123456789",
+      "email": "miguel.example.com",
+      "check": false,
+      "pais": "UK",
+      "ciudad": "jaen"
+    },
+    {
+      "id": 7,
+      "nombre": "miguel",
+      "password": "123456789",
+      "password2": "123456789",
+      "email": "miguel.example.com",
+      "check": false,
       "pais": "Italy",
       "ciudad": "jaen"
     }

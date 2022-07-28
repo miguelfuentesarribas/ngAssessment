@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl, FormBuilder, ValidationErrors, Validators, FormGroup } from '@angular/forms';
-import { FormularioComponent } from '../components/formulario/formulario.component';
-import { CRUDComponent } from '../crud.component';
 import { CrudControls } from '../components/formulario/formulario.component.config';
 
 @Injectable({
@@ -21,7 +19,10 @@ export class CrudFormService {
     [this._CrudFormControls.CHECK]: [ false, [Validators.required]],
     [this._CrudFormControls.CIUDAD]: [ 'jaen', [Validators.required]]
   } ,{
-    validators: [this.sameField('password', 'password2')],
+    validators: [
+      this.sameField('password', 'password2'),
+      this.countryEmpty('pais')          
+    ],
   }
   )
   
@@ -32,8 +33,22 @@ export class CrudFormService {
       const pass1 = formGroup.get(campo1)?.value;
       const pass2 = formGroup.get(campo2)?.value;
 
-      const a = () =>{formGroup.get(campo2)?.setErrors({'noIguales': true}); return {'noIguales': true}}; 
-      return pass1 !== pass2 ? a() : null
+      const error = () =>{formGroup.get(campo2)?.setErrors({'noIguales': true}); 
+        return {'noIguales': true};
+      }; 
+      return pass1 !== pass2 ? error() : null;
+    }
+  }
+
+  countryEmpty(field1: string) {
+    return (formGroup: AbstractControl): ValidationErrors | null => {
+      const country = formGroup.get(field1)?.value;
+
+      const error = () =>{formGroup.get(field1)?.setErrors({'paisVacio': true})
+        return {'paisVacio': true};
+      };
+      
+      return country?.name === '' || country?.name === '--'  ? error() : null;
     }
   }
 }

@@ -39,8 +39,7 @@ export class TablaComponent implements OnInit {
   subscription: Subscription;
 
   constructor(private jss: JsonServerService,
-              private bs: BrothersService) { 
-                this.bs.classTabla = this;
+              private bs: BrothersService) {
                 this.subscription = this.jss.getClickEvent().subscribe(() => this.ngOnInit())
               }
 
@@ -53,10 +52,7 @@ export class TablaComponent implements OnInit {
   }
 
   uptate(usuario: ICrudUserForm) {
-    this.bs.setUserToUpdate(usuario)
-    //console.log(usuario);
-    if (this.bs.classFormulario.update === false) {
-      this.bs.classFormulario.update = !this.bs.classFormulario.update
-    }
+    this.bs.subject.next(usuario)
+    this.bs.classFormulario.update === false ? this.bs.classFormulario.update = !this.bs.classFormulario.update : null;
   }
 }
